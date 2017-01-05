@@ -17,7 +17,7 @@ Heap::Heap(void* location, uint32_t size)
 	heapStart[2] = 0;
 	heapStart[3] = 0;
 	
-	uint32_t* heapEnd = (uint32_t*) (availableList + size - 4) - 8;
+	uint32_t* heapEnd = (uint32_t*) (location + size - 4) - 8;
 	heapEnd[0] = size - 8;
 	heapEnd[1] = BLOCK_FREE;
 	
